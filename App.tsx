@@ -524,14 +524,14 @@ function App() {
       ...archives.map(a => ({ id: a.id, label: a.weekLabel, type: 'ARCHIVE' } as WeekOption))
   ];
 
-  if (isLoading) {
-      return (
-          <div className="min-h-screen flex items-center justify-center bg-gray-50 flex-col gap-4">
-              <Loader2 className="w-10 h-10 animate-spin text-brand-600" />
-              <p className="text-gray-500 font-medium">Chargement des données...</p>
-          </div>
-      )
-  }
+  //if (isLoading) {
+  //    return (
+  //        <div className="min-h-screen flex items-center justify-center bg-gray-50 flex-col gap-4">
+  //            <Loader2 className="w-10 h-10 animate-spin text-brand-600" />
+  //            <p className="text-gray-500 font-medium">Chargement des données...</p>
+  //        </div>
+  //    )
+ // }
 
   return (
     <Layout 
