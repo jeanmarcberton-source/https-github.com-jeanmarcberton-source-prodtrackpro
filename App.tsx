@@ -1,4 +1,5 @@
-
+import './index.css'; // S'assurer que le chemin est correct (selon l'emplacement de votre fichier index.css)
+import React from 'react';
 import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import Dashboard from './components/Dashboard';
@@ -9,8 +10,6 @@ import StaffManager from './components/StaffManager';
 import { MachineId, MachineConfig, ProductionLog, PlanningAssignment, StaffMember, GlobalForecasts, WeekOption, WeeklyArchive } from './types';
 import { supabase } from './supabaseClient';
 import { Loader2 } from 'lucide-react';
-import './index.css'; // S'assurer que le chemin est correct (selon l'emplacement de votre fichier index.css)
-import React from 'react';
 
 // ... le reste de votre code
 // Default initial config
