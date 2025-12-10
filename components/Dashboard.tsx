@@ -388,7 +388,17 @@ const Dashboard: React.FC<DashboardProps> = ({ configs, logs, planning = [], glo
                                <tr className="bg-gray-100 font-bold">
                                    <td className="border p-1">TOTAL</td>
                                    {m.totalDays.map((d: any) => <td key={d.date} className="border p-1 text-center">{d.bal > 0 ? d.bal.toLocaleString() : '-'}</td>)}
-                                   <td className="border p-1 text-right bg-gray-200">{m.grandTotal.bal.toLocaleString()}</td>
+                                   <td className="border p-1 text-right bg-gray-200">
+                                        <div className="flex flex-col items-end">
+                                            <span>{m.grandTotal.bal.toLocaleString()}</span>
+                                            <span className={`text-[9px] px-1 rounded ${m.progressBal >= 100 ? 'bg-green-200 text-green-800' : 'bg-gray-300 text-gray-700'}`}>
+                                                {m.progressBal.toFixed(1)}%
+                                            </span>
+                                            <div className={`text-[9px] ${m.grandTotal.gap >= 0 ? 'text-green-700' : 'text-red-700'}`}>
+                                                {m.grandTotal.gap > 0 ? '+' : ''}{m.grandTotal.gap.toFixed(1)} h
+                                            </div>
+                                        </div>
+                                   </td>
                                </tr>
                            </tbody>
                        ))}
@@ -713,9 +723,14 @@ const Dashboard: React.FC<DashboardProps> = ({ configs, logs, planning = [], glo
                                         </td>
                                     ))}
                                     <td className="px-4 py-2 text-right text-brand-900 text-lg bg-gray-200">
-                                        {m.grandTotal.bal.toLocaleString()}
-                                        <div className={`text-xs ${m.grandTotal.gap >= 0 ? 'text-green-700' : 'text-red-700'}`}>
-                                            {m.grandTotal.gap > 0 ? '+' : ''}{m.grandTotal.gap.toFixed(1)} h
+                                        <div className="flex flex-col items-end">
+                                            <span>{m.grandTotal.bal.toLocaleString()}</span>
+                                            <span className={`text-[10px] px-1 rounded ${m.progressBal >= 100 ? 'bg-green-200 text-green-800' : 'bg-white/50 text-gray-600 border border-gray-300'}`}>
+                                                {m.progressBal.toFixed(1)}%
+                                            </span>
+                                            <div className={`text-xs ${m.grandTotal.gap >= 0 ? 'text-green-700' : 'text-red-700'}`}>
+                                                {m.grandTotal.gap > 0 ? '+' : ''}{m.grandTotal.gap.toFixed(1)} h
+                                            </div>
                                         </div>
                                     </td>
                                 </tr>
