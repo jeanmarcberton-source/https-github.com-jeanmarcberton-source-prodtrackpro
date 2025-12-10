@@ -9,7 +9,10 @@ import StaffManager from './components/StaffManager';
 import { MachineId, MachineConfig, ProductionLog, PlanningAssignment, StaffMember, GlobalForecasts, WeekOption, WeeklyArchive } from './types';
 import { supabase } from './supabaseClient';
 import { Loader2 } from 'lucide-react';
+import './index.css'; // S'assurer que le chemin est correct (selon l'emplacement de votre fichier index.css)
+import React from 'react';
 
+// ... le reste de votre code
 // Default initial config
 const DEFAULT_CONFIGS: Record<MachineId, MachineConfig> = {
   M1: { id: 'M1', active: true, targetBal: 0, targetVolume: 0, targetCadence: 0 },
