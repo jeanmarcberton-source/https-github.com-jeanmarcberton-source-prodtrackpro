@@ -75,7 +75,13 @@ function App() {
 
     const fmt = (date: Date) => date.toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' });
 
-    return `S${weekNo} DU ${fmt(monday)} AU ${fmt(sunday)}`;
+    //return `S${weekNo} DU ${fmt(monday)} AU ${fmt(sunday)}`;
+    return (
+    <div style={{ padding: '50px', backgroundColor: '#f0f0f0' }}>
+      <h1>🎉 MON APPLICATION EST VIVANTE ! 🎉</h1>
+      {/* Laissez le reste de votre code ici */}
+    </div>
+  );
   };
 
   // Label displayed in UI
